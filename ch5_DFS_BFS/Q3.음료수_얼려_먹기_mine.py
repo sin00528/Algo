@@ -5,10 +5,10 @@ for i in range(n):
     graph.append(list(map(int, input())))
 
 def dfs(x, y):
-    # 범위 처리
-    if -1 >= x or x >= n or -1 >= y or y >= m:
+    # 범위 벗어나는 경우
+    if x < 0 or x >= n or y < 0 or y >= m:
         return False
-    # 방문 로직
+    # 방문하지 않은 경우, 해당노드 방문처리
     if graph[x][y] == 0:
         graph[x][y] = 1
         dfs(x-1, y)
